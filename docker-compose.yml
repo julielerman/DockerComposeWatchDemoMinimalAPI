@@ -1,0 +1,13 @@
+
+services:
+  valuesaapi:
+    image: ${DOCKER_REGISTRY-}
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 5114:5114
+    develop:
+      watch:
+        - action: rebuild
+          path: .
